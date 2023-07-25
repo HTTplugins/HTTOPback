@@ -40,6 +40,8 @@ public class UserService {
     public boolean isPasswordCorrect(User user){
         User checkingUser = userRepository.findByMail(user.getMail());
 
+
+
         return BCrypt.checkpw(user.getPassword(), checkingUser.getPassword());
 
 

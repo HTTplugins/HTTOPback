@@ -16,6 +16,17 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private boolean isAdmin;
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
+    }
+
     public String getMail() {
         return mail;
     }
