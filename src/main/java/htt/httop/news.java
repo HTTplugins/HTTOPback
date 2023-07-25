@@ -16,8 +16,8 @@ public class news {
 
     @Column
     private String title;
-    @Column
-    private Date publish_date;
+    @Column(name = "publish_date")
+    private Date publishDate;
 
     public int getId() {
         return id;
@@ -36,10 +36,10 @@ public class news {
     }
 
     public Date getPublish_date() {
-        return publish_date;
+        return publishDate;
     }
 
     public void setPublish_date(Date publish_date) {
-        this.publish_date = publish_date;
+        this.publishDate = publish_date;
     }
 }
