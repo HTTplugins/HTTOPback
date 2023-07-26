@@ -1,5 +1,5 @@
 
-package htt.httop;
+package htt.httop.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,13 +7,14 @@ import org.mindrot.jbcrypt.BCrypt;
 
 @Service
 public class UserService {
-    private final UserRepository userRepository;
-
     @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
 
+
+    public boolean checkAdmin(String mail) {
+        User user = userRepository.findByMail(mail);
+        return user.getAdmin();
+    }
     public User insertarUsuario(String username, String mail, String password) {
         User user = new User();
         user.setUsername(username);

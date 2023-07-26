@@ -1,4 +1,4 @@
-package htt.httop;
+package htt.httop.news;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -16,8 +16,8 @@ public class news {
 
     @Column
     private String title;
-    @Column(name = "publish_date")
-    private Date publishDate;
+    @Column(name = "pdate")
+    private Date pdate;
 
     public int getId() {
         return id;
@@ -35,11 +35,11 @@ public class news {
         this.title = title;
     }
 
-    public Date getPublish_date() {
-        return publishDate;
+    public Date getPdate() {
+        return pdate;
     }
 
-    public void setPublish_date(Date publish_date) {
-        this.publishDate = publish_date;
+    public void setPdate(Date pdate) {
+        this.pdate = pdate;
     }
 }

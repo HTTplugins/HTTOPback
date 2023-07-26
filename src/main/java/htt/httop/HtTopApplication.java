@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(scanBasePackages = {"htt.httop", "users"})
+@SpringBootApplication()
 public class HtTopApplication {
 
 	public static void main(String[] args) {

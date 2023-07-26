@@ -1,4 +1,4 @@
-package htt.httop;
+package htt.httop.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +13,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
 
     @PostMapping("/createUser")
     public User createUser(@RequestBody User user) {
@@ -31,8 +32,14 @@ public class UserController {
 
     @PostMapping("/checkMail")
     public boolean checkMailInUse(@RequestBody String mail) {
-
+        System.out.println("mailcall");
         return userService.isEmailInUse(mail);
+    }
+
+    @PostMapping("/checkAdmin")
+    public boolean checkAdmin(@RequestBody String mail) {
+        System.out.println("workds");
+        return userService.checkAdmin(mail);
     }
 
     @PostMapping("/checkPassword")

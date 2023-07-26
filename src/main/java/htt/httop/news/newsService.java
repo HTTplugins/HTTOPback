@@ -1,4 +1,4 @@
-package htt.httop;
+package htt.httop.news;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,16 +6,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 
-
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Service
 public class newsService {
 
-    private final newsRepository newsRepository;
+    private final htt.httop.news.newsRepository newsRepository;
 
     @Autowired
-    public newsService(htt.httop.newsRepository newsRepository) {
+    public newsService(newsRepository newsRepository) {
         this.newsRepository = newsRepository;
     }
 
@@ -23,12 +23,9 @@ public class newsService {
         int pageSize = 10;
         int adjustedPage = page - 1;
 
-        // Crear una instancia de Pageable para la consulta paginada
         Pageable pageable = PageRequest.of(adjustedPage, pageSize);
 
-        // Obtener los resultados paginados del repositorio
-
-        List<news> paginatedNews = newsRepository.findAllByOrderByPublishDateDesc(pageable);
+        List<news> paginatedNews = newsRepository.findAllByOrderByPdateDesc(pageable);
 
         return paginatedNews;
     }

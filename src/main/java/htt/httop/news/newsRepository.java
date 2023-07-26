@@ -1,4 +1,4 @@
-package htt.httop;
+package htt.httop.news;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,5 +11,6 @@ public interface newsRepository extends JpaRepository<news, String> {
     news findByTitle(String title);
     news findById(int id);
 
-    List<news> findAllByOrderByPublishDateDesc(Pageable pageable);
+    //List<news> findAllByOrderByPublishDateDesc(Pageable pageable);
+    List<news> findAllByOrderByPdateDesc(Pageable pageable);
 }
