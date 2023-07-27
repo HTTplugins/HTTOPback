@@ -16,6 +16,9 @@ public class news {
 
     @Column
     private String title;
+    @Column(name = "descrip")
+    private String descrip;
+
     @Column(name = "pdate")
     private Date pdate;
 
@@ -37,6 +40,14 @@ public class news {
 
     public Date getPdate() {
         return pdate;
+    }
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String descrip) {
+        this.descrip = descrip;
     }
 
     public void setPdate(Date pdate) {
