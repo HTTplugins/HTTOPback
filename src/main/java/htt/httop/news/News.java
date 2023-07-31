@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "news")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class news {
+public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -22,6 +22,16 @@ public class news {
     @Column(name = "pdate")
     private Date pdate;
 
+    @Column(name = "content")
+    private String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
     public int getId() {
         return id;
     }

@@ -38,7 +38,6 @@ public class UserController {
 
     @PostMapping("/checkAdmin")
     public boolean checkAdmin(@RequestBody String mail) {
-        System.out.println("workds");
         return userService.checkAdmin(mail);
     }
 

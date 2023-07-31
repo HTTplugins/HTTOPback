@@ -7,10 +7,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface newsRepository extends JpaRepository<news, String> {
-    news findByTitle(String title);
-    news findById(int id);
+public interface NewsRepository extends JpaRepository<News, String> {
+    News findByTitle(String title);
+    News findById(int id);
 
     //List<news> findAllByOrderByPublishDateDesc(Pageable pageable);
-    List<news> findAllByOrderByPdateDesc(Pageable pageable);
+    List<News> findAllByOrderByPdateDesc(Pageable pageable);
+
 }

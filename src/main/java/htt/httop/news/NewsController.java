@@ -9,16 +9,28 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/news")
-public class newsController {
-    private final newsService newsService;
+public class NewsController {
+    private final NewsService newsService;
 
 
-    public newsController(newsService newsService) {
+    public NewsController(NewsService newsService) {
         this.newsService = newsService;
     }
 
     @PostMapping("/getNews")
-    public List<news> getNews(@RequestBody int page){
+    public List<News> getNews(@RequestBody int page){
         return newsService.getNews(page);
+    }
+
+    @PostMapping("/addNews")
+    public News addNews(@RequestBody News news){
+
+        return newsService.addNews(news);
+    }
+
+
+    @PostMapping("/getDetailedNews")
+    public News getDetailedNews(@RequestBody int id){
+        return newsService.getDetailedNews(id);
     }
 }
