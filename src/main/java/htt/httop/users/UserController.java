@@ -32,7 +32,7 @@ public class UserController {
 
     @PostMapping("/checkMail")
     public boolean checkMailInUse(@RequestBody String mail) {
-        System.out.println("mailcall");
+
         return userService.isEmailInUse(mail);
     }
 

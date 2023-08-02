@@ -14,4 +14,8 @@ public interface NewsRepository extends JpaRepository<News, String> {
     //List<news> findAllByOrderByPublishDateDesc(Pageable pageable);
     List<News> findAllByOrderByPdateDesc(Pageable pageable);
 
+    void deleteById(int id);
+
+
+
 }

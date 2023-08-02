@@ -1,5 +1,6 @@
 package htt.httop.news;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.PageRequest;
@@ -36,5 +37,10 @@ public class NewsService {
     public News addNews(News news){
         news.setPdate(new Date());
         return newsRepository.save(news);
+    }
+
+    @Transactional
+    public void deleteNews(int id){
+         newsRepository.deleteById(id);
     }
 }

@@ -33,4 +33,9 @@ public class NewsController {
     public News getDetailedNews(@RequestBody int id){
         return newsService.getDetailedNews(id);
     }
+
+    @PostMapping("/deleteNews")
+    public void deletedNews(@RequestBody int id){
+        newsService.deleteNews(id);
+    }
 }
