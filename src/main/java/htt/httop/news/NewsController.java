@@ -38,4 +38,9 @@ public class NewsController {
     public void deletedNews(@RequestBody int id){
         newsService.deleteNews(id);
     }
+
+    @PostMapping("/uploadImg")
+    public void uploadImg(){
+        System.out.println("uploadImg");
+    }
 }
